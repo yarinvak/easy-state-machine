@@ -9,7 +9,12 @@
   "author": "Yarin Vaknin <yarinvak@gmail.com> (http://github.com/yarinvak)",
   "license": "ISC",
   "dependencies": {
-    "ts-node": "^8.6.2",
+    "ts-node": "^8.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^24.3.0",
     "typescript": "^3.7.5"
   }
 }

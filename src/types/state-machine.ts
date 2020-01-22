@@ -26,11 +26,12 @@ export class StateMachine {
                 try {
                     result = await event.handler(data);
                     this.currentState = event.nextState;
+                    await this.onStateChange(this.currentState, result);
                     await this.execute(result.newEvent, result);
                 } catch (e) {
                     this.currentState = event.failedState;
+                    await this.onStateChange(this.currentState, result);
                 }
-                await this.onStateChange(this.currentState, result);
             }
         }
     }
