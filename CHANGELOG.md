@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/yarinvak/easy-state-machine/compare/v1.0.0...v1.1.0) (2020-03-18)
+
+
+### Features
+
+* **error-return:** return error if occures ([e3b6a3a](https://github.com/yarinvak/easy-state-machine/commit/e3b6a3aec33ae322a25dcf057c9c4f8b17c30b32))
+
 # 1.0.0 (2020-01-22)
 
 
