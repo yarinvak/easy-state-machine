@@ -68,6 +68,7 @@ describe("state machine tests", () => {
 
     test("execute | an exception is thrown during execution of an handler | the state is changed to the failed state", async () => {
         // arrange
+        const error = new Error("error");
         const state: State = {
             name: "exceptionState",
             events: {
@@ -75,7 +76,7 @@ describe("state machine tests", () => {
                     nextState: "s",
                     failedState: "fa",
                     handler: jest.fn().mockImplementation(() => {
-                        throw new Error("error!");
+                        throw error;
                     })
                 }
             }
@@ -88,7 +89,7 @@ describe("state machine tests", () => {
         await stateMachine.execute("next", {bla: "bla"});
 
         // assert
-        expect(onChanged).toBeCalledWith("fa", undefined);
+        expect(onChanged).toBeCalledWith("fa", undefined, error);
     });
 
     test("execute | handler execution is successful | the state is changed to success state", async () => {

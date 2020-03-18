@@ -3,7 +3,7 @@ import {EventHandlerResult, State} from "./state";
 export class StateMachine {
     private currentState: string;
     private readonly states: State[];
-    private readonly onStateChange: (newStateName: string, result?: EventHandlerResult) => void;
+    private readonly onStateChange: (newStateName: string, result?: EventHandlerResult, error?: any) => void;
 
 
     constructor(initialState: string, states: State[],
@@ -30,7 +30,7 @@ export class StateMachine {
                     await this.execute(result.newEvent, result);
                 } catch (e) {
                     this.currentState = event.failedState;
-                    await this.onStateChange(this.currentState, result);
+                    await this.onStateChange(this.currentState, result, e);
                 }
             }
         }
