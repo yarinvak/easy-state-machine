@@ -12,8 +12,8 @@ export interface EventHandlerResult {
     data: any;
 }
 
-export interface OnChangedParams {
-    newStateName: string;
-    result?: EventHandlerResult;
-    error?: any;
+export interface OnChanged {
+    (newStateName: string,
+     result?: EventHandlerResult,
+     error?: any): void
 }

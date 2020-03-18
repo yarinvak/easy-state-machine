@@ -1,13 +1,13 @@
-import {OnChangedParams, State} from "./state";
+import {OnChanged, State} from "./state";
 
 export class StateMachine {
     private currentState: string;
     private readonly states: State[];
-    private readonly onStateChange: (params: OnChangedParams) => void;
+    private readonly onStateChange: OnChanged;
 
 
     constructor(initialState: string, states: State[],
-                onStateChange: (params: OnChangedParams) => void) {
+                onStateChange: OnChanged) {
         this.currentState = initialState;
         this.states = states;
         this.onStateChange = onStateChange;
@@ -26,11 +26,11 @@ export class StateMachine {
                 try {
                     result = await event.handler(data);
                     this.currentState = event.nextState;
-                    await this.onStateChange({newStateName: this.currentState, result});
+                    await this.onStateChange(this.currentState, result);
                     await this.execute(result.newEvent, result);
                 } catch (e) {
                     this.currentState = event.failedState;
-                    await this.onStateChange({newStateName: this.currentState, result, error: e});
+                    await this.onStateChange(this.currentState, result, e);
                 }
             }
         }
