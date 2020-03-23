@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/yarinvak/easy-state-machine/compare/v1.1.1...v1.1.2) (2020-03-23)
+
+
+### Bug Fixes
+
+* execute with data only ([4a4bf51](https://github.com/yarinvak/easy-state-machine/commit/4a4bf519879272e4ba266306054110658d4bc178))
+
 ## [1.1.1](https://github.com/yarinvak/easy-state-machine/compare/v1.1.0...v1.1.1) (2020-03-18)
 
 
