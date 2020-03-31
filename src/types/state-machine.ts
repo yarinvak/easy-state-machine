@@ -30,7 +30,7 @@ export class StateMachine {
                     await this.execute(result.newEvent, result.data);
                 } catch (e) {
                     this.currentState = event.failedState;
-                    await this.onStateChange(this.currentState, result, e);
+                    await this.onStateChange(this.currentState, {data}, e);
                 }
             }
         }

@@ -89,7 +89,7 @@ describe("state machine tests", () => {
         await stateMachine.execute("next", {bla: "bla"});
 
         // assert
-        expect(onChanged).toBeCalledWith("fa", undefined, error);
+        expect(onChanged).toBeCalledWith("fa", {data: {bla: "bla"}}, error);
     });
 
     test("execute | handler execution is successful | the state is changed to success state", async () => {
