@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/yarinvak/easy-state-machine/compare/v1.1.2...v1.1.3) (2020-03-31)
+
+
+### Bug Fixes
+
+* send data if fails (to on state change) ([066e59c](https://github.com/yarinvak/easy-state-machine/commit/066e59c4c398788d5921d4a366a949d25be5b793))
+
 ## [1.1.2](https://github.com/yarinvak/easy-state-machine/compare/v1.1.1...v1.1.2) (2020-03-23)
 
 
